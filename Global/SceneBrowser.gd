@@ -10,8 +10,15 @@ extends Node
 var loader : ResourceInteractiveLoader
 
 export var scene_map : Dictionary = {
+	"Main Menu": "res://UI/MainMenu.tscn",
 	"Path Test": "res://PrototypeScenes/Patrol/PathTest.tscn",
-	"Integration Test": "res://PrototypeScenes/GameplayIntegration/Test-1.tscn"
+	"Integration Test": "res://PrototypeScenes/GameplayIntegration/Test-1.tscn",
+	"A Full Map": "res://PrototypeScenes/GameplayIntegration/AFullStage.tscn",
+	"Chase Test": "res://PrototypeScenes/GameplayIntegration/GuardChase.tscn",
+	"Level 1": "res://Levels/Level1.tscn",
+	"Level 2": "res://Levels/Level2.tscn",
+	"Level 3": "res://Levels/Level3.tscn",
+	"Level 4": "res://Levels/Level4.tscn",
 }
 
 func change_scene( scene_name ):
@@ -19,6 +26,10 @@ func change_scene( scene_name ):
 	new = load( new )
 	get_tree().change_scene_to( new )
  #end
+
+
+func get_current_scene() -> Node:
+	return get_tree().current_scene
 
 
 func change_scene_with_load( scene_name, loader_name = "Hi" ):
